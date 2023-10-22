@@ -343,9 +343,8 @@ a{
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
-    background-color: #fff5f5;
-    border: 1px solid #ffe4e4;
-    padding: 20px;
+    padding: 20px 0px;
+    margin-left: 20px;
     border-radius: 5px;
 }
 .product-details-specification-place i{
