@@ -74,6 +74,9 @@ a{
     top: auto;
     bottom: 30px;
 }
+.main-right-bottom-btns a{
+    margin-left: 10px;
+}
 .main-left-bottom-btns{
     left: 50px;
     top: auto;
@@ -280,6 +283,53 @@ a{
     margin-left: 10px;
     padding-left: 10px;
 }
+@media(max-width:600px){
+    .product-user-container-call-chat span{
+        display: none;
+    }
+    .product-user-container-call-chat i{
+        padding-left: 0px;
+        margin-left: 0px;
+        border-left: none;
+    }
+    .product-user-container-call-chat{
+        width: 40px !important;
+        height: 40px !important;
+        margin-left: 10px;
+    }
+    .product-user-container-call{
+        justify-content: flex-start !important;
+        margin-top: 0px !important;
+    }
+    .product-user-container-call-icon{
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .product-user-container-call-icon i,
+    .product-user-container-call-chat i{
+        font-size: 0.9rem !important;
+    }
+    .product-user-container{
+        padding: 10px;
+    }
+    .product-user-box{
+        display: grid;
+        grid-template-columns: 1fr 55px;
+    }
+    .product-user-box-img{
+        width: 55px;
+        height: 55px;
+    }
+    .product-user-box-text strong{
+        font-size: 0.8rem !important; 
+    }
+    .product-user-box-text span{
+        font-size: 0.7rem;
+    }
+    .product-user-container{
+        grid-template-columns: 110px 1fr;
+    }
+}
 /*==details====================*/
 .product-details-container-main{
     width: 100%;
@@ -472,46 +522,59 @@ a{
 .testimonial-box{
     width:100%;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-    background-color: #ffffff;
+    background-color: #fff8f8;
     padding: 20px;
     margin: 20px 0px;
     cursor: pointer;
     transition: all ease 0.3s;
     user-select: none;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 10px;
 }
+
 .profile-img{
-    width:50px;
-    height: 50px;
+    width:100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     margin-left: 20px;
+    padding: 3px;
+    border: 1px solid var(--main-color);
 }
 .profile-img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
 }
+
 .profile{
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
+    text-align: end;
 }
 .name-user{
     display: flex;
     flex-direction: column;
 }
 .name-user strong{
-    color: #3d3d3d;
+    color: var(--main-color);
     font-size: 1.1rem;
     letter-spacing: 0.5px;
+    font-weight: 500;
 }
-.name-user span{
+.name-user span,
+.reviews span{
     color: #979797;
     font-size: 0.8rem;
 }
-.reviews{
+.reviews i{
     color: #f9d71c;
 }
 .box-top{
@@ -524,9 +587,18 @@ a{
     grid-gap: 5px;
 }
 .client-comment p{
-    font-size: 0.9rem;
-    color: #4b4b4b;
+    font-size: 0.8rem;
+    color: var(--main-color);
     text-align: end;
+    opacity: 0.7;
+}
+.client-comment{
+    text-align: end;
+}
+.client-comment span{
+    color: #898989;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 .testimonial-box:hover{
     transform: translateY(-10px);
@@ -622,6 +694,46 @@ a{
 .review-summary-rating-container span{
     color: #646464;
     margin-top: 10px;
+}
+@media(max-width:650px){
+    .mySwiperReview .swiper-slide{
+        padding-right: 30px;
+    }
+    .testimonial-box{
+        grid-template-columns: 1fr 50px;
+        grid-gap: 0px;
+    }
+    .profile-img{
+        width:80px;
+        height: 80px;
+    margin-left: 20px;}
+    .name-user span,
+    .reviews span{
+    color: #979797;
+    font-size: 0.6rem;
+}
+.name-user strong{
+    font-size:0.8rem;
+}
+.reviews i{
+    color: #f6b70a;
+    font-size: 0.55rem !important;
+}
+.reviews div{
+    margin-bottom: -9px;
+}
+.review-summary-rating-container span{
+    margin-top: 10px;
+}
+.client-comment p,
+.client-comment span{
+    font-size: 0.6rem;
+    margin-top: 3px;
+    word-break: break-all;
+}
+.box-top{
+    margin-bottom: 8px;
+}
 }
 /*==product================================*/
 .product-container{
@@ -835,7 +947,6 @@ a{
     }
 }
 @media(max-width:600px){
-    .product-user-container,
     .product-buy-btn-container{
         display: flex;
         flex-direction: column-reverse;
