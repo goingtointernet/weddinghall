@@ -345,7 +345,11 @@ a{
     background-color: #ffffff;
     align-items: center;
     z-index: 100001;
-    direction: rtl; 
+}
+@media(max-width:600px){
+    .product-details-container-main .product-details-container-main-list-container{
+        direction: rtl;
+    }  
 }
 .product-details-list{
     display: flex;
