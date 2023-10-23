@@ -547,6 +547,21 @@
       </div>
 
 
+      <div class="review-section">
+        <h2>Evaluation and review</h2>
+        <p>Share your experience to help others</p>
+        <div class="stars" id="stars">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+        <textarea placeholder="Add a special moment from a recent visit"></textarea>
+        <input id="review-img" type="file">
+        <label for="review-img">Share a photo posted</label>
+      </div>
+
       <div class="product-container product-container-first">
 
         <div class="product-heading">
@@ -1216,6 +1231,38 @@
 
       }
     });
+
+
+    const stars = document.querySelectorAll("#stars span");
+
+    stars.forEach(star => {
+      star.addEventListener("mouseover", (e) => {
+        highlightStars(e.target.getAttribute("data-value"));
+      });
+      star.addEventListener("mouseout", () => {
+        highlightStars(0);
+      });
+      star.addEventListener("click", (e) => {
+        const value = e.target.getAttribute("data-value");
+        stars.forEach(s => {
+          if (s.getAttribute("data-value") <= value) {
+            s.classList.add("active");
+          } else {
+            s.classList.remove("active");
+          }
+        });
+      });
+    });
+
+    function highlightStars(value) {
+      stars.forEach(star => {
+        if (star.getAttribute("data-value") <= value) {
+          star.style.color = "#f5a623";
+        } else {
+          star.style.color = "#e0e0e0";
+        }
+      });
+    }
 
   </script>
 

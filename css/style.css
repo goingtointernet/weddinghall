@@ -523,7 +523,7 @@ a{
     background-color: #fff5f5;
     border-radius: 10px;
     border: 1px solid #ffe4e4;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 
 }
 .testimonial-box-container h3{
@@ -1095,4 +1095,72 @@ a{
     .product-user-box .product-user-box-img{
         margin-bottom: 10px;
     }
+}
+
+/**/
+
+.review-section {
+    width: 100%;
+    margin: 50px 0px;
+    text-align: end;
+}
+
+.review-section h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #343434;
+}
+
+.review-section p {
+    color: #717171;
+    font-size: 0.8rem;
+}
+
+.review-section label {
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    padding: 15px 0px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 20px;
+    background-color: transparent;
+    display: flex;
+    max-width: 230px;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.review-section input[type="file"]{
+    display: none;
+}
+.review-section textarea{
+    text-align: end;
+    border: 1px solid #eaeaea;
+    padding: 15px;
+    border-radius: 5px;
+    height:120px;
+    max-width:600px;
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+
+.stars span {
+    font-size: 40px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+
+.stars span:hover,
+.stars span.active {
+    color: #f5a623;
+}
+@media(max-width:600px){
+    .review-section {
+        width: 300px;
+        margin: 50px auto;
+        text-align: end;
+    } 
 }
