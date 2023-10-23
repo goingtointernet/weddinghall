@@ -179,15 +179,17 @@
 
     <!--details-->
     <div class="product-details-container-main">
-      <ul class="product-details-list">
-        <li>Offers</li>
-        <li>Rating</li>
-        <li>Albums</li>
-        <li>The Video</li>
-        <li>The Pricing</li>
-        <li>The Address</li>
-        <li class="active">General</li>
-      </ul>
+      <div class="product-details-container-main-list-container">
+        <ul class="product-details-list">
+          <li>Offers</li>
+          <li>Rating</li>
+          <li>Albums</li>
+          <li>The Video</li>
+          <li>The Pricing</li>
+          <li>The Address</li>
+          <li class="active">General</li>
+        </ul>
+      </div>
 
       <div class="product-details-container">
         <div class="product-details-specification-container">
@@ -1170,6 +1172,7 @@
       spaceBetween: 10,
       autoplay: {
         delay: 2500,
+        reverseDirection: true,
         disableOnInteraction: false,
       },
       breakpoints: {
@@ -1190,6 +1193,28 @@
           spaceBetween: 10,
         },
       },
+    });
+
+
+    const productList = document.querySelector('.product-details-container-main-list-container');
+
+    // Initial position of the product list
+    const productListTop = productList.offsetTop;
+
+    // Listen to the scroll event
+    window.addEventListener('scroll', function () {
+      if (window.pageYOffset >= productListTop) {
+        // If the scroll position is beyond the product list's top, make it fixed
+        productList.style.position = 'fixed';
+        productList.style.top = '0'; // Adjust as necessary
+        productList.style.left = '0'; // Adjust as necessary
+        productList.style.boxShadow = '2px 2px 30px rgba(0,0,0,0.12)'; // Adjust as necessary
+      } else {
+        // If not, set it back to its original position
+        productList.style.position = 'static';
+        productList.style.boxShadow = 'none'; // Adjust as necessary
+
+      }
     });
 
   </script>
