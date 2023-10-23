@@ -181,17 +181,17 @@
     <div class="product-details-container-main">
       <div class="product-details-container-main-list-container">
         <ul class="product-details-list">
-          <li>Offers</li>
-          <li>Rating</li>
-          <li>Albums</li>
-          <li>The Video</li>
-          <li>The Pricing</li>
-          <li>The Address</li>
-          <li class="active">General</li>
+          <li class="list" data-filter="offers">Offers</li>
+          <li class="list" data-filter="albums">Albums</li>
+          <li class="list" data-filter="video">The Video</li>
+          <li class="list" data-filter="pricing">The Pricing</li>
+          <li class="list" data-filter="insights">The Address</li>
+          <li class="list" data-filter="rating">Rating</li>
+          <li class="list active" data-filter="all">General</li>
         </ul>
       </div>
 
-      <div class="product-details-container">
+      <div class="product-details-container filter-box">
         <div class="product-details-specification-container">
           <div class="product-details-specification-box">
             <h3>Place Type :</h3>
@@ -234,7 +234,7 @@
         </div>
       </div>
 
-      <div class="product-details-service">
+      <div class="product-details-service filter-box">
         <h2>Services:</h2>
         <ul>
           <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo at consequuntur, natus totam dolorem atque
@@ -246,7 +246,7 @@
         </ul>
       </div>
 
-      <div class="product-details-advance">
+      <div class="product-details-advance filter-box">
         <h2>Advance details:</h2>
 
         <div class="product-details-advance-container">
@@ -281,7 +281,7 @@
       </div>
 
 
-      <div class="review-summary">
+      <div class="review-summary filter-box rating">
         <h3>Summary Of Review:</h3>
 
         <div class="review-summary-container">
@@ -308,7 +308,7 @@
         </div>
       </div>
 
-      <div class="testimonial-box-container">
+      <div class="testimonial-box-container filter-box rating">
 
         <h3>Latest reviews:</h3>
         <!-- Swiper -->
@@ -547,7 +547,7 @@
       </div>
 
 
-      <div class="review-section">
+      <div class="review-section filter-box rating">
         <h2>Evaluation and review</h2>
         <p>Share your experience to help others</p>
         <div class="stars" id="stars">
@@ -562,7 +562,7 @@
         <label for="review-img">Share a photo posted</label>
       </div>
 
-      <div class="product-container product-container-first">
+      <div class="product-container product-container-first filter-box">
 
         <div class="product-heading">
           <a href="#">View All</a>
@@ -699,7 +699,7 @@
       </div>
 
 
-      <div class="product-container">
+      <div class="product-container filter-box ">
 
         <div class="product-heading">
           <a href="#">View All</a>
@@ -837,7 +837,7 @@
 
 
 
-      <div class="product-container">
+      <div class="product-container filter-box">
 
         <div class="product-heading">
           <a href="#">View All</a>
@@ -974,7 +974,7 @@
       </div>
 
 
-      <div class="product-category">
+      <div class="product-category filter-box">
         <div class="product-category-heading">
           <a href="#">View All</a>
           <h3>Category of all 7</h3>
@@ -1119,6 +1119,7 @@
 
   <!-- Swiper JS -->
   <script src="js/swiper-bundle.min.js.js"></script>
+  <script src="js/jquery-3.7.1.js.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
@@ -1263,6 +1264,28 @@
         }
       });
     }
+
+
+
+    /*--==Post-Filter-Script=================================--*/
+
+    $(document).on('click', '.product-details-list li', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    });
+
+    /*--filter------------------------*/
+    $(document).ready(function () {
+      $('.list').click(function () {
+        const value = $(this).attr('data-filter');
+        if (value == 'all') {
+          $('.filter-box').show('1000');
+        }
+        else {
+          $('.filter-box').not('.' + value).hide('1000');
+          $('.filter-box').filter('.' + value).show('1000');
+        }
+      });
+    });
 
   </script>
 
