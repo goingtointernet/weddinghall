@@ -442,7 +442,10 @@ a{
 .product-details-service h2,
 .product-details-advance h2,
 .testimonial-box-container h3,
-.review-summary h3{
+.product-details-address h3,
+.product-details-video h3,
+.review-summary h3,
+.product-details-albums h3{
     color: #333333;
     font-size: 1.3rem;
     font-weight: 600;
@@ -479,6 +482,21 @@ a{
     margin-left: auto;
     align-items: flex-end;
 }
+.product-details-advance.pricing {
+    max-width: 500px;
+}
+.product-details-advance.pricing .product-details-advance-container{
+    background-color: #fef2f2;
+    border: 1px solid #ffe4e4;
+    padding: 20px;
+}
+.product-details-address{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+    text-align: end;
+}
 .product-details-advance-container{
     background-color: #fef2f2;
     border: 1px solid #ffe4e4;
@@ -487,9 +505,66 @@ a{
     padding: 30px;
     margin-top: 10px;
 }
+.product-details-video{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+}
+.product-details-video iframe{
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+@media(max-width:600px){
+    .product-details-video iframe{
+        height: 180px;}
+}
+.product-details-address p{
+    color: var(--main-color);
+}
+.product-details-address iframe{
+    max-width: 800px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.product-details-albums{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+.product-details-albums-photo{
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+.product-details-albums-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    max-height: 200px;
+}
 .product-details-advance-box{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
 .product-details-advance-box{
     border-bottom: 1px solid #eaeaea;
